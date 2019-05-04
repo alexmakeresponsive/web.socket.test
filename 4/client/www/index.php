@@ -36,12 +36,14 @@ session_start();
 
                       if (isset($_POST['buttonSwnd'])) {
                           $msg = $_REQUEST['inputMessage'];
-                          $sock = socket_create(AF_INET, SOCK_STREAM, 0);
 
-                          socket_connect($sock, $host, $port);
-                          socket_write($sock, $msg, strlen($msg));
+                          //Socket API
+                          $sock  =  socket_create(AF_INET, SOCK_STREAM, 0);
+                                    socket_connect($sock, $host, $port);
+                                    socket_write($sock, $msg, strlen($msg));
+                          $reply =  socket_read($sock, 1924);
+                          //Socket API
 
-                          $reply = socket_read($sock, 1924);
                           $reply = trim($reply);
 
 
