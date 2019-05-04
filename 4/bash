@@ -1,0 +1,5 @@
+php -f "/Volumes/data/web/3-Learn/3 BE/php/socket/4/server/run.php"
+
+
+
+php -S localhost:8000 -t "/Volumes/data/web/3-Learn/3 BE/php/socket/4/client/www"
